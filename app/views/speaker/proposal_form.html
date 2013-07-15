@@ -76,6 +76,20 @@
                                 </div>
                             </div>   
                         </li>
+                        <li>
+                            <div label="Track" info="model.talk.track.description" devoxx-more-info>
+                                <!-- wrapped in div to prevent loss of functionality when uniform.js performs it's unwrap() -->
+                                <div>
+                                    <select id="talkTrack"
+                                            name="track"
+                                            ng-model="model.talk.track"
+                                            required
+                                            ng-disabled="!model.talk.event"
+                                            ng-options="t.name for t in model.talk.event.tracks"
+                                            devoxx-uniform></select>
+                                </div>
+                            </div>
+                        </li>
 
                     </ul>
                 </div>
@@ -84,17 +98,6 @@
             <div class="row">
                 <div class="col16" ng-show="model.talk.event">
                     <ul>
-
-                        <li>
-                            <label for="talkTrack">Track</label>
-                            <select id="talkTrack"
-                                    name="track"
-                                    ng-model="model.talk.track"
-                                    required
-                                    ng-disabled="!model.talk.event"
-                                    ng-options="t.name for t in model.talk.event.tracks"
-                                    devoxx-uniform></select>
-                        </li>
                         <li>
                             <label for="talkAudienceExperience">Audience experience</label>
                             <select name="audienceExperience"
